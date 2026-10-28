@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تأسیسات فنی و مهندسی نوین پلاس</title>
+<style>
+:root {
+  --site-primary: #123D5A;
+  --site-secondary: #14A6A0;
+  --site-background: #F3F7F8;
+  --site-on-primary: #FFFFFF;
+  --site-on-secondary: #062F35;
+  --site-on-background: #142B39;
+  --site-font-body: Tahoma, Arial, sans-serif;
+  --site-font-heading: Tahoma, Arial, sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--site-font-body); background: light-dark(#F3F7F8,#10191f); color: light-dark(#142B39,#e8f0f3); line-height: 1.85; }
+#app { background-color: var(--site-background); color: var(--site-on-background); min-height: 100vh; width: 100%; border-radius: 0; overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(1120px, 92%); margin: auto; }
+header { background: var(--site-primary); color: var(--site-on-primary); position: relative; z-index: 2; }
+.nav { display:flex; justify-content:space-between; align-items:center; gap:18px; padding: calc(14px * var(--site-spacing-scale)) 0; }
+.brand { display:flex; align-items:center; gap:12px; font-weight:800; font-size: clamp(16px,2vw,21px); }
+.logo { width:46px; height:46px; display:grid; place-items:center; border-radius:14px; background:var(--site-secondary); color:#062F35; font-size:25px; font-weight:900; }
+nav { display:flex; align-items:center; gap:24px; font-size:14px; }
+nav a:hover { color:#6de4dc; }
+.btn { border:0; border-radius:calc(12px * var(--site-radius-scale)); padding:12px 20px; background:var(--site-secondary); color:#062F35; font-family:inherit; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:transform .2s,filter .2s; }
+.btn:hover { transform:translateY(-2px); filter:brightness(1.06); }
+.btn.outline { background:transparent; color:inherit; border:1px solid currentColor; }
+.hero { background:linear-gradient(120deg,#0b2c43 0%,#123D5A 58%,#176a70 100%); color:white; padding:clamp(54px,8vw,100px) 0; position:relative; overflow:hidden; }
+.hero:after { content:""; position:absolute; width:400px;height:400px;border:1px solid #ffffff20;border-radius:50%;left:-120px;top:-180px;box-shadow:0 0 0 45px #ffffff08,0 0 0 95px #ffffff06;opacity:var(--site-decoration-opacity);pointer-events:none; }
+.hero-grid { display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:38px; position:relative; z-index:1; }
+.eyebrow { color:#76e7de; font-weight:800; font-size:14px; letter-spacing:.2px; }
+h1,h2,h3 { font-family:var(--site-font-heading); line-height:1.45; }
+h1 { font-size:calc(clamp(32px,5vw,55px) * var(--site-heading-scale)); margin:12px 0 18px; }
+.hero p { color:#d9e9ef; font-size:17px; max-width:610px; }
+.actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+.hero-art { min-height:300px; display:grid; place-items:center; position:relative; }
+.pipe-card { width:min(340px,100%); aspect-ratio:1/1; border-radius:28px; background:linear-gradient(145deg,#1b6676,#102f49); border:1px solid #ffffff30; display:grid; place-items:center; box-shadow:0 25px 60px #061d2c55; }
+.pipe-card svg { width:78%; max-width:290px; height:auto; }
+.stats { background:var(--site-secondary); color:#062F35; }
+.stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:20px 0; text-align:center; }
+.stat strong { display:block; font-size:20px; }
+.stat span { font-size:13px; }
+section { padding:calc(70px * var(--site-spacing-scale)) 0; }
+.section-head { text-align:center; max-width:700px; margin:0 auto 36px; }
+.section-head h2 { font-size:calc(clamp(26px,3.5vw,38px) * var(--site-heading-scale)); margin:0 0 10px; color:var(--site-primary); }
+.section-head p { color:#607681; margin:0; }
+.services { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.service { background:light-dark(#FFFFFF,#17242c); border:1px solid light-dark(#DFE8EB,#30414a); border-radius:calc(18px * var(--site-radius-scale)); padding:26px; box-shadow:0 8px 26px #18394a08; }
+.service .ico { width:54px;height:54px; display:grid;place-items:center; background:#e0f7f4; border-radius:16px; font-size:26px; margin-bottom:15px; }
+.service h3 { margin:0 0 8px; color:var(--site-primary); font-size:20px; }
+.service p { color:#647985; font-size:14px; margin:0; }
+.why { background:#e7f1f3; }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+.why h2 { font-size:calc(clamp(26px,3.5vw,38px) * var(--site-heading-scale)); color:var(--site-primary); margin:0 0 14px; }
+.checks { display:grid; gap:12px; padding:0; list-style:none; }
+.checks li { display:flex; gap:10px; align-items:flex-start; }
+.check { flex:none; display:grid; place-items:center; width:26px;height:26px; background:var(--site-secondary); border-radius:50%; font-weight:bold; }
+.quote { background:var(--site-primary); color:white; padding:30px; border-radius:22px; position:relative; }
+.quote .big { font-size:52px; line-height:1; color:#72e0d7; }
+.quote p { font-size:20px; margin:10px 0; }
+.quote small { color:#c9e0e8; }
+.contact-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
+.contact-card { background:var(--site-primary); color:white; padding:28px; border-radius:20px; }
+.contact-card h3 { margin-top:0; font-size:23px; }
+.contact-item { border-top:1px solid #ffffff2b; padding:13px 0; }
+.contact-item span { display:block; color:#a9d0d9; font-size:13px; }
+form { background:light-dark(#fff,#17242c); border:1px solid light-dark(#dfe8eb,#30414a); border-radius:20px; padding:26px; }
+label { display:block; font-size:14px; font-weight:bold; margin:0 0 6px; }
+input,select,textarea { width:100%; padding:12px 13px; margin-bottom:16px; border:1px solid #cbd9df; border-radius:10px; font:inherit; background:light-dark(#fff,#10191f); color:light-dark(#142b39,#e8f0f3); }
+textarea { min-height:105px; resize:vertical; }
+footer { background:#0b2638; color:#d4e5eb; padding:24px 0; font-size:13px; }
+.footer-row { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+.notice { margin-top:12px; font-size:12px; color:#6b818b; }
+.mobile-menu { display:none; }
+@media(max-width:760px) {
+ nav { display:none; }
+ .hero-grid,.why-grid,.contact-grid { grid-template-columns:1fr; }
+ .hero-art { min-height:230px; }
+ .pipe-card { max-width:270px; }
+ .services { grid-template-columns:1fr; }
+ .stat-grid { grid-template-columns:1fr; gap:8px; }
+ section { padding:48px 0; }
+ .nav { padding:12px 0; }
+}
+</style>
+</head>
+<body>
+<div id="app" data-sites-preview-theme="custom">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="logo">ن+</span><span>نوین پلاس<small style="display:block;font-size:11px;font-weight:400;color:#b9d7df">تأسیسات فنی و مهندسی</small></span></a>
+    <nav aria-label="ناوبری اصلی">
+      <a href="#home">خانه</a><a href="#services">خدمات</a><a href="#about">چرا نوین پلاس؟</a><a href="#contact">تماس با ما</a>
+    </nav>
+    <a class="btn" href="#contact">درخواست مشاوره</a>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">تخصص • کیفیت • اعتماد</div>
+   <h1>جریان آرام زندگی،<br>با تأسیسات مطمئن</h1>
+   <p>ارائه خدمات فنی و مهندسی تأسیسات مکانیکی ساختمان؛ از طراحی و اجرا تا نصب، راه‌اندازی و نگهداری سیستم‌های سرمایشی، گرمایشی و آبرسانی.</p>
+   <div class="actions"><a class="btn" href="#contact">ثبت درخواست خدمات <span>←</span></a><a class="btn outline" href="#services">مشاهده خدمات</a></div>
+  </div>
+  <div class="hero-art">
+   <div class="pipe-card" aria-label="تصویر گرافیکی لوله‌کشی و تأسیسات">
+    <svg viewBox="0 0 300 300" fill="none" role="img" aria-label="طرح فنی لوله و شیرآلات">
+     <g stroke="#73e0d7" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M45 75H125Q145 75 145 95V205Q145 225 165 225H250"/>
+      <path d="M45 150H85Q105 150 105 170V245"/>
+      <path d="M220 55V105Q220 125 200 125H185"/>
+     </g>
+     <g stroke="#e6f5f6" stroke-width="5" stroke-linecap="round">
+      <path d="M35 58V92M18 75H52M235 55H205M220 40V70M235 208H265M250 193V223"/>
+     </g>
+     <circle cx="145" cy="75" r="19" fill="#123d5a" stroke="#e6f5f6" stroke-width="5"/>
+     <circle cx="145" cy="75" r="6" fill="#73e0d7"/>
+     <rect x="82" y="228" width="46" height="30" rx="7" fill="#14a6a0" stroke="#e6f5f6" stroke-width="4"/>
+     <path d="M90 243H120" stroke="#e6f5f6" stroke-width="4"/>
+    </svg>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="stats"><div class="wrap stat-grid">
+ <div class="stat"><strong>اجرای اصولی</strong><span>مطابق نقشه و استانداردهای پروژه</span></div>
+ <div class="stat"><strong>کیفیت قابل اعتماد</strong><span>توجه به جزئیات و انتخاب تجهیزات</span></div>
+ <div class="stat"><strong>پاسخ‌گویی روشن</strong><span>هماهنگی شفاف از شروع تا پایان کار</span></div>
+</div></div>
+<section id="services">
+ <div class="wrap">
+  <div class="section-head"><h2>خدمات نوین پلاس</h2><p>راهکارهای تأسیساتی متناسب با نیاز ساختمان شما، با تمرکز بر اجرای تمیز، ایمن و اصولی.</p></div>
+  <div class="services">
+   <article class="service"><div class="ico">♨</div><h3>سیستم‌های گرمایشی</h3><p>نصب و راه‌اندازی موتورخانه، شوفاژ، پکیج، گرمایش از کف و تجهیزات مرتبط.</p></article>
+   <article class="service"><div class="ico">❄</div><h3>سیستم‌های سرمایشی</h3><p>اجرای لوله‌کشی و نصب تجهیزات سرمایشی و فن‌کویل متناسب با مشخصات پروژه.</p></article>
+   <article class="service"><div class="ico">◉</div><h3>آبرسانی و لوله‌کشی</h3><p>اجرای خطوط آب سرد و گرم، نصب شیرآلات توکار و روکار و تجهیزات آبرسانی.</p></article>
+   <article class="service"><div class="ico">⌁</div><h3>فاضلاب و ونت</h3><p>اجرای شبکه فاضلاب و هواکش، نصب اتصالات و بررسی شیب‌بندی و آب‌بندی.</p></article>
+   <article class="service"><div class="ico">⚙</div><h3>طراحی و اجرای تأسیسات</h3><p>همکاری در بررسی نقشه‌ها، برآورد اقلام و اجرای تأسیسات مکانیکی ساختمان.</p></article>
+   <article class="service"><div class="ico">🛠</div><h3>سرویس و رفع عیب</h3><p>بررسی ایرادهای رایج تأسیسات و ارائه راهکار برای نگهداری بهتر تجهیزات.</p></article>
+  </div>
+ </div>
+</section>
+<section class="why" id="about">
+ <div class="wrap why-grid">
+  <div><h2>چرا نوین پلاس؟</h2><p>در تأسیسات ساختمان، اجرای دقیق و انتخاب درست تجهیزات به اندازه ظاهر کار اهمیت دارد. هدف ما ارائه خدماتی روشن، منظم و متناسب با نیاز هر پروژه است.</p>
+   <ul class="checks"><li><span class="check">✓</span><span><b>تجربه و تخصص اجرایی</b><br>توجه به جزئیات فنی و شرایط واقعی پروژه</span></li><li><span class="check">✓</span><span><b>کیفیت در اجرا</b><br>رعایت اصول فنی و کنترل مراحل کار</span></li><li><span class="check">✓</span><span><b>قیمت‌گذاری شفاف</b><br>شرح خدمات و هماهنگی پیش از شروع کار</span></li><li><span class="check">✓</span><span><b>پشتیبانی پس از اجرا</b><br>پاسخ‌گویی و راهنمایی درباره نگهداری سیستم</span></li></ul>
+  </div>
+  <div class="quote"><div class="big">“</div><p>تأسیسات خوب دیده نمی‌شود؛ آسایش آن هر روز احساس می‌شود.</p><small>نوین پلاس | تأسیسات فنی و مهندسی</small></div>
+ </div>
+</section>
+<section id="contact">
+ <div class="wrap">
+  <div class="section-head"><h2>برای پروژه‌تان با ما در تماس باشید</h2><p>نوع خدمات موردنیاز را بنویسید تا بتوانیم برای هماهنگی و بررسی اولیه راهنمایی‌تان کنیم.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card"><h3>ارتباط با نوین پلاس</h3><p>برای بازدید، برآورد اولیه یا مشاوره درباره تأسیسات ساختمان، از راه‌های ارتباطی زیر استفاده کنید.</p>
+    <div class="contact-item"><span>تلفن تماس</span><b>۰۹۱۹۵۷۲۹۶۱۵</b></div>
+    <div class="contact-item"><span>محدوده فعالیت</span><b>تهران و مناطق اطراف (با هماهنگی)</b></div>
+    <div class="contact-item"><span>ساعات پاسخ‌گویی</span><b>با هماهنگی تلفنی</b></div>
+    <a class="btn" style="width:100%;margin-top:18px" href="tel:+989195729615">تماس مستقیم</a>
+   </div>
+   <form id="requestForm">
+    <label for="name">نام شما</label><input id="name" name="name" placeholder="نام و نام خانوادگی" required>
+    <label for="phone">شماره تماس</label><input id="phone" name="phone" inputmode="tel" placeholder="شماره‌ای برای تماس" required>
+    <label for="service">نوع خدمات</label><select id="service" name="service"><option>لوله‌کشی و آبرسانی</option><option>موتورخانه و گرمایش</option><option>سیستم سرمایشی و فن‌کویل</option><option>فاضلاب و ونت</option><option>طراحی و اجرای تأسیسات</option><option>سرویس و تعمیرات</option><option>سایر موارد</option></select>
+    <label for="details">توضیحات پروژه</label><textarea id="details" name="details" placeholder="محل پروژه، متراژ تقریبی و توضیحات موردنیاز"></textarea>
+    <button class="btn" type="submit" style="width:100%">آماده‌سازی پیام درخواست</button>
+    <p class="notice" id="formNote">این فرم در پیش‌نمایش، اطلاعات را به سرور ارسال نمی‌کند؛ با زدن دکمه، متن پیام برای کپی آماده می‌شود.</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-row"><span>© نوین پلاس | تأسیسات فنی و مهندسی</span><span>اجرای اصولی، آسایش ماندگار</span></div></footer>
+</div>
+<script>
+document.getElementById('requestForm').addEventListener('submit', function(e) {
+ e.preventDefault();
+ const name = document.getElementById('name').value.trim();
+ const phone = document.getElementById('phone').value.trim();
+ const service = document.getElementById('service').value;
+ const details = document.getElementById('details').value.trim();
+ const message = `درخواست خدمات نوین پلاس\nنام: ${name}\nشماره تماس: ${phone}\nنوع خدمات: ${service}\nتوضیحات: ${details}`;
+ const note = document.getElementById('formNote');
+ if (navigator.clipboard && navigator.clipboard.writeText) {
+   navigator.clipboard.writeText(message).then(() => { note.textContent = 'متن درخواست کپی شد. می‌توانید آن را برای شماره تماس نوین پلاس ارسال کنید.'; }).catch(() => { note.textContent = message; });
+ } else { note.textContent = message; }
+});
+</script>
+</body>
+</html>
