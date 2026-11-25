@@ -189,9 +189,7 @@ document.getElementById('requestForm').addEventListener('submit', function(e) {
  const phone = document.getElementById('phone').value.trim();
  const service = document.getElementById('service').value;
  const details = document.getElementById('details').value.trim();
- const message = `درخواست خدمات نوین پلاس\nنام: ${name}\nشماره تماس: ${phone}\nنوع خدمات: ${service}\nتوضیحات: ${details}`;
- const note = document.getElementById('formNote');
- if (navigator.clipboard && navigator.clipboard.writeText) {
+ const message = `درخواست خدمات نوین پلاس\nنام: ${name}
    navigator.clipboard.writeText(message).then(() => { note.textContent = 'متن درخواست کپی شد. می‌توانید آن را برای شماره تماس نوین پلاس ارسال کنید.'; }).catch(() => { note.textContent = message; });
  } else { note.textContent = message; }
 });
