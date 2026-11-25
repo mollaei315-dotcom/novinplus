@@ -1,1 +1,317 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="نوین پلاس؛ خدمات تخصصی طراحی، اجرا و تعمیر تأسیسات مکانیکی ساختمان در تهران. موتورخانه، لوله‌کشی، گرمایش و سرمایش.">
+<title>نوین پلاس | تأسیسات فنی و مهندسی</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --blue:#1266d5;
+  --navy:#102b50;
+  --light:#f4f8fd;
+  --text:#24364b;
+  --muted:#718096;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Vazirmatn',Tahoma,sans-serif;
+  background:#fff;color:var(--text);
+  line-height:1.9;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  background:#fff;position:sticky;top:0;z-index:20;
+  border-bottom:1px solid #edf1f6;
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{
+  width:46px;height:46px;border-radius:14px;
+  background:var(--blue);color:#fff;
+  display:grid;place-items:center;font-size:25px;font-weight:900;
+}
+.logo strong{font-size:21px;color:var(--navy)}
+.logo small{display:block;color:var(--muted);font-size:10px}
+nav{display:flex;gap:24px;font-size:13px;font-weight:600}
+nav a:hover{color:var(--blue)}
+.call{
+  background:var(--blue);color:#fff;padding:10px 18px;
+  border-radius:10px;font-size:13px;font-weight:700;
+}
+.hero{
+  padding:80px 0 70px;
+  background:linear-gradient(120deg,#f3f8ff,#fff 65%);
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  align-items:center;gap:40px;
+}
+.tag{
+  display:inline-block;padding:6px 14px;
+  background:#e5f0ff;color:var(--blue);
+  border-radius:30px;font-size:12px;font-weight:700;
+}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.6;color:var(--navy);margin:17px 0}
+h1 span{color:var(--blue)}
+.hero p{color:var(--muted);font-size:15px;max-width:550px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  padding:12px 22px;border-radius:11px;font-weight:700;font-size:14px;
+}
+.primary{background:var(--blue);color:white}
+.secondary{border:1px solid #d9e3ef;color:var(--navy);background:white}
+.hero-art{
+  min-height:320px;border-radius:30px;
+  background:linear-gradient(145deg,#dcecff,#f4f8ff);
+  display:grid;place-items:center;position:relative;
+  overflow:hidden;
+}
+.hero-art .big-icon{font-size:125px;filter:drop-shadow(0 12px 15px #799bc544)}
+.hero-art:before,.hero-art:after{
+  content:"";position:absolute;border:1px solid #ffffff;
+  border-radius:50%;width:260px;height:260px;
+}
+.hero-art:after{width:350px;height:350px}
+.art-label{
+  position:absolute;bottom:22px;right:22px;
+  background:white;padding:10px 16px;border-radius:12px;
+  font-size:12px;font-weight:700;color:var(--navy);
+}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:15px;margin-top:38px;
+}
+.stat{background:#fff;border:1px solid #edf1f6;border-radius:14px;padding:14px;text-align:center}
+.stat strong{display:block;color:var(--blue);font-size:20px}
+.stat small{font-size:11px;color:var(--muted)}
+section{padding:72px 0}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:28px;color:var(--navy)}
+.section-title p{font-size:13px;color:var(--muted);margin-top:7px}
+.services{background:#fbfcfe}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.card{
+  background:#fff;border:1px solid #edf1f6;
+  border-radius:18px;padding:25px 20px;
+  transition:.25s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #102b5010}
+.card-icon{
+  width:52px;height:52px;border-radius:15px;
+  display:grid;place-items:center;background:#eaf3ff;
+  font-size:26px;margin-bottom:15px;
+}
+.card h3{font-size:16px;color:var(--navy);margin-bottom:8px}
+.card p{font-size:12px;color:var(--muted)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;
+}
+.about-box{
+  background:var(--navy);color:#fff;border-radius:24px;
+  padding:35px;
+}
+.about-box h3{font-size:25px;margin-bottom:12px}
+.about-box p{font-size:13px;color:#d5e3f3}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
+.feature{background:#ffffff12;padding:12px;border-radius:10px;font-size:12px}
+.feature b{color:#80b8ff;margin-left:5px}
+.about-text h2{font-size:28px;color:var(--navy);margin-bottom:14px}
+.about-text p{color:var(--muted);font-size:14px}
+.projects{background:#f8faff}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{
+  padding:24px;background:#fff;border-radius:16px;
+  border:1px solid #edf1f6;
+}
+.project b{display:block;color:var(--navy);font-size:15px}
+.project span{color:var(--muted);font-size:12px}
+.contact-box{
+  background:linear-gradient(120deg,#102b50,#174d8d);
+  color:#fff;border-radius:25px;padding:40px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:25px;flex-wrap:wrap;
+}
+.contact-box h2{font-size:26px}
+.contact-box p{font-size:13px;color:#d8e7fa}
+.contact-box .btn{background:#fff;color:var(--navy)}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
+footer strong{color:var(--navy)}
+.float-call{
+  position:fixed;bottom:20px;left:18px;z-index:30;
+  background:#16a765;color:white;border-radius:50px;
+  padding:12px 18px;font-weight:700;font-size:13px;
+  box-shadow:0 5px 20px #0002;
+}
+@media(max-width:750px){
+  nav{display:none}
+  .nav{min-height:68px}
+  .hero{padding:48px 0}
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero-art{min-height:230px}
+  .hero-art .big-icon{font-size:95px}
+  .cards{grid-template-columns:1fr 1fr}
+  .project-grid{grid-template-columns:1fr 1fr}
+  section{padding:52px 0}
+}
+@media(max-width:430px){
+  .cards,.project-grid{grid-template-columns:1fr}
+  .stats{gap:7px}
+  .stat{padding:10px 4px}
+  .stat strong{font-size:17px}
+  .stat small{font-size:10px}
+  .contact-box{padding:25px}
+}
+</style>
+</head>
+
+<body>
+<header>
+ <div class="container nav">
+  <a href="#" class="logo">
+   <div class="logo-icon">ن</div>
+   <div><strong>نوین پلاس</strong><small>تأسیسات فنی و مهندسی</small></div>
+  </a>
+  <nav>
+   <a href="#home">صفحه اصلی</a>
+   <a href="#services">خدمات</a>
+   <a href="#about">درباره ما</a>
+   <a href="#projects">پروژه‌ها</a>
+   <a href="#contact">تماس با ما</a>
+  </nav>
+  <a class="call" href="tel:09195729615">تماس با ما</a>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <span class="tag">متخصص اجرای تأسیسات ساختمان</span>
+   <h1>آرامش ساختمان شما<br>با اجرای <span>تأسیسات مطمئن</span></h1>
+   <p>
+    نوین پلاس ارائه‌دهنده خدمات طراحی، اجرا و نصب سیستم‌های
+    تأسیسات مکانیکی ساختمان با تمرکز بر کیفیت، تخصص و رضایت مشتری.
+   </p>
+   <div class="actions">
+    <a class="btn primary" href="tel:09195729615">☎ تماس و مشاوره</a>
+    <a class="btn secondary" href="#services">مشاهده خدمات ←</a>
+   </div>
+   <div class="stats">
+    <div class="stat"><strong>۱۰ سال</strong><small>تجربه کاری</small></div>
+    <div class="stat"><strong>تهران</strong><small>محدوده خدمات</small></div>
+    <div class="stat"><strong>تخصص</strong><small>اجرای حرفه‌ای</small></div>
+   </div>
+  </div>
+  <div class="hero-art">
+   <div class="big-icon">⚙️</div>
+   <div class="art-label">نوین پلاس؛ همراه مطمئن ساختمان شما</div>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="container">
+  <div class="section-title">
+   <h2>خدمات تخصصی نوین پلاس</h2>
+   <p>از طراحی تا اجرا و راه‌اندازی تأسیسات ساختمان</p>
+  </div>
+  <div class="cards">
+   <div class="card"><div class="card-icon">🔥</div><h3>سیستم گرمایشی</h3><p>طراحی و اجرای سیستم‌های گرمایشی، شوفاژ و گرمایش از کف.</p></div>
+   <div class="card"><div class="card-icon">❄️</div><h3>سیستم سرمایشی</h3><p>نصب و راه‌اندازی سیستم‌های سرمایشی و فن‌کویل.</p></div>
+   <div class="card"><div class="card-icon">♨️</div><h3>موتورخانه</h3><p>نصب، اجرا و راه‌اندازی انواع موتورخانه شوفاژ.</p></div>
+   <div class="card"><div class="card-icon">🚰</div><h3>لوله‌کشی آب</h3><p>طراحی و اجرای تأسیسات آبرسانی ساختمان.</p></div>
+   <div class="card"><div class="card-icon">🔧</div><h3>شیرآلات توکار</h3><p>نصب انواع شیرآلات توکار و تجهیزات بهداشتی.</p></div>
+   <div class="card"><div class="card-icon">🏢</div><h3>تأسیسات ساختمان</h3><p>اجرای خدمات تأسیسات مکانیکی ساختمان و لوله‌کشی.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container about-grid">
+  <div class="about-box">
+   <h3>چرا نوین پلاس؟</h3>
+   <p>کیفیت اجرا و رضایت مشتری، اساس فعالیت ماست.</p>
+   <div class="features">
+    <div class="feature"><b>✓</b> تجربه و تخصص</div>
+    <div class="feature"><b>✓</b> کیفیت تضمینی</div>
+    <div class="feature"><b>✓</b> قیمت منصفانه</div>
+    <div class="feature"><b>✓</b> پشتیبانی خدمات</div>
+    <div class="feature"><b>✓</b> اجرای اصولی</div>
+    <div class="feature"><b>✓</b> مشاوره تخصصی</div>
+   </div>
+  </div>
+  <div class="about-text">
+   <h2>درباره نوین پلاس</h2>
+   <p>
+    نوین پلاس با هدف ارائه خدمات فنی و مهندسی در زمینه تأسیسات
+    مکانیکی ساختمان فعالیت می‌کند. ما در زمینه طراحی، اجرا،
+    نصب و راه‌اندازی سیستم‌های سرمایشی، گرمایشی و آبرسانی
+    در کنار شما هستیم.
+   </p>
+   <div class="actions">
+    <a class="btn primary" href="tel:09195729615">درخواست مشاوره</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="projects" id="projects">
+ <div class="container">
+  <div class="section-title">
+   <h2>نمونه پروژه‌های اجرایی</h2>
+   <p>بخشی از سوابق کاری و پروژه‌های انجام‌شده</p>
+  </div>
+  <div class="project-grid">
+   <div class="project"><b>هروی سنتر</b><span>پروژه تأسیسات ساختمانی</span></div>
+   <div class="project"><b>پروژه ۲۰ واحدی صادقیه</b><span>تأسیسات ساختمان</span></div>
+   <div class="project"><b>پروژه ۱۲ واحدی نبرد</b><span>تأسیسات ساختمان</span></div>
+   <div class="project"><b>پروژه ۵ واحدی پاسداران</b><span>تأسیسات ساختمان</span></div>
+   <div class="project"><b>پروژه ۱۴ واحدی شریعتی</b><span>تأسیسات ساختمان</span></div>
+   <div class="project"><b>پروژه ۱۵ واحدی یوسف‌آباد</b><span>تأسیسات ساختمان</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="contact-box">
+   <div>
+    <h2>برای شروع پروژه آماده‌ایم!</h2>
+    <p>برای مشاوره و دریافت اطلاعات خدمات با ما تماس بگیرید.</p>
+    <p style="margin-top:12px;font-size:19px;color:#fff;font-weight:800" dir="ltr">09195729615</p>
+   </div>
+   <div class="actions">
+    <a class="btn" href="tel:09195729615">تماس مستقیم</a>
+    <a class="btn" href="https://wa.me/989195729615">واتساپ</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <strong>نوین پلاس</strong> | تأسیسات فنی و مهندسی
+  <p>ارائه خدمات تأسیسات مکانیکی ساختمان در تهران</p>
+  <p>© تمامی حقوق محفوظ است.</p>
+ </div>
+</footer>
+
+<a class="float-call" href="tel:09195729615">☎ تماس فوری</a>
+</body>
+</html>
